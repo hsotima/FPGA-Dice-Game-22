@@ -15,7 +15,9 @@ reject decision offered.
 
 ## Demo
 
-https://github.com/hsotima/fpga-dice-22/blob/main/docs/demo.mp4
+
+
+
                                     
 
 
