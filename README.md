@@ -15,13 +15,7 @@ reject decision offered.
 
 ## Demo
 
-
-
-
-                                    
-
-
----
+(docs/demo.mp4)
 
 ## System Overview
 
