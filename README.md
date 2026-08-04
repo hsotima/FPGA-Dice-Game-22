@@ -15,7 +15,10 @@ reject decision offered.
 
 ## Demo
 
-(docs/demo.mp4)
+![The DE10-Lite running the game, with the score and die values on the seven-segment displays](docs/demo.gif)
+
+*Eleven seconds from reset. The full 57-second recording is in
+[`docs/demo.mp4`](docs/demo.mp4).*
 
 ## System Overview
 
