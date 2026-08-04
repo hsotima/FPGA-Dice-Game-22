@@ -237,17 +237,27 @@ polarity and pin assignment were involved.
 ```
 .
 ├── README.md
-├── src/                    Quartus project and schematic sources
-│   ├── *.bdf               Block diagram / schematic files
-│   ├── *.qpf / *.qsf       Quartus project and settings
-│   └── README.md           Build and programming instructions
-├── sim/                    ModelSim testbenches and waveform scripts
+├── src/                        Quartus project and schematic sources
+│   ├── lab6.bdf                Top level — board I/O and block wiring
+│   ├── control2.bdf            Nine-state one-hot control FSM
+│   ├── Moore.bdf               Die counter (Moore machine)
+│   ├── scoreProcessingUnit.bdf BCD score datapath — 7483 / 7485 / 74163 / 74157
+│   ├── turn_counter.bdf        Turn counter on a 74163
+│   ├── lab2_sop1.bdf           Seven-segment decoder (sum-of-products)
+│   ├── lab6.qpf                Quartus project file
+│   └── README.md               Design hierarchy and build instructions
 ├── docs/
-│   ├── demo.mp4            Hardware demonstration
-│   ├── schematics/         Exported PNG/PDF renders of each .bdf
-│   └── prelab/             Original design work (handwritten)
-└── .gitignore              Quartus build artefacts
+│   ├── demo.mp4                Hardware demonstration
+│   ├── schematics/             Exported renders of each .bdf
+│   └── prelab/                 Original design work (handwritten)
+└── .gitignore                  Quartus build artefacts
 ```
+
+Two things are deliberately absent. The project `.qsf` is not committed, so
+**pin assignments must be re-entered** before the design will program to a
+board — see [`src/README.md`](src/README.md). There are no ModelSim testbenches
+here either; as described above, this design was debugged on hardware by
+driving intermediate signals to the LEDs rather than in simulation.
 
 ---
 

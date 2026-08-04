@@ -1,0 +1,32 @@
+# Quartus build artefacts -- all regenerated on compile.
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+hc_output/
+.qsys_edit/
+
+*.qws
+*.rpt
+*.summary
+*.smsg
+*.pin
+*.sof
+*.pof
+*.jdi
+*.done
+*.bak
+*.orig
+*.qarlog
+*.sopcinfo
+
+# ModelSim
+work/
+transcript
+vsim.wlf
+*.vstf
+
+# OS / editor
+.DS_Store
+*.swp
