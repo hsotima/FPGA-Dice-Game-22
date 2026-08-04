@@ -24,12 +24,21 @@ reject decision offered.
 
 The design is partitioned into four blocks:
 
-| Block | Function |
-| --- | --- |
-| **Control FSM** | 9-state Moore machine sequencing the full game |
-| **Die counter** | Moore machine cycling the die value at clock rate; the value at release is the roll |
-| **Score processing unit** | Accumulates banked rolls and compares the running total against 22 |
-| **Turn counter** | Counts turns and asserts `turns_9` on the final turn |
+| Block | Function | Source | Schematic |
+| --- | --- | --- | --- |
+| **Control FSM** | 9-state Moore machine sequencing the full game | [`control2.bdf`](src/control2.bdf) | [view](docs/schematics/control2.png) |
+| **Die counter** | Moore machine cycling the die value at clock rate; the value at release is the roll | [`Moore.bdf`](src/Moore.bdf) | [view](docs/schematics/Moore.png) |
+| **Score processing unit** | Accumulates banked rolls and compares the running total against 22 | [`scoreProcessingUnit.bdf`](src/scoreProcessingUnit.bdf) | [view](docs/schematics/scoreProcessingUnit.png) |
+| **Turn counter** | Counts turns and asserts `turns_9` on the final turn | [`turn_counter.bdf`](src/turn_counter.bdf) | [view](docs/schematics/turn_counter.png) |
+
+These are wired together in the top level, which also drives the board's
+switches, buttons and seven-segment displays. A seven-segment decoder
+([`lab2_sop1.bdf`](src/lab2_sop1.bdf), [view](docs/schematics/lab2_sop1.png))
+is reused from an earlier lab and instantiated wherever a digit is displayed.
+
+[![Top-level block diagram](docs/schematics/lab6.png)](docs/schematics/lab6.png)
+
+*Top level — `lab6.bdf`. Click for full size.*
 
 ### Die counter and randomness
 
@@ -251,7 +260,7 @@ polarity and pin assignment were involved.
 │   └── README.md               Design hierarchy and build instructions
 ├── docs/
 │   ├── demo.mp4                Hardware demonstration
-│   ├── schematics/             Exported renders of each .bdf
+│   ├── schematics/             PNG render of each .bdf, named to match
 │   └── prelab/                 Original design work (handwritten)
 └── .gitignore                  Quartus build artefacts
 ```
